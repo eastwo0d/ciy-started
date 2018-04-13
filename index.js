@@ -38,59 +38,35 @@ function renderList(){
     });
     document.getElementById('items').innerHTML = result;
 }
-
 renderList();
 
 function doPush() {
     numbers.push(numbers[numbers.length-1]+1);
-    var result = '';
-    numbers.forEach((value, index)=>{
-        result = result + `<div class="item item${value}" id='item${value}'>${value}</div>`;
-    });
-    document.getElementById('items').innerHTML = result;
+    renderList();
 }
 
 function doPop() {
     numbers.pop();
     var result = '';
-    numbers.forEach((value, index)=>{
-        result = result + `<div class="item item${value}" id='item${value}'>${value}</div>`;
-    });
-    document.getElementById('items').innerHTML = result;
+    renderList();
 }
 
 function doShift() {
     numbers.shift();
-    var result = '';
-    numbers.forEach((value, index)=>{
-        result = result + `<div class="item item${value}" id='item${value}'>${value}</div>`;
-    });
-    document.getElementById('items').innerHTML = result;
+    renderList();
 }
 
 function doUnShift() {
     numbers.unshift(numbers[0]-1)
-    var result = '';
-    numbers.forEach((value, index)=>{
-        result = result + `<div class="item item${value}" id='item${value}'>${value}</div>`;
-    });
-    document.getElementById('items').innerHTML = result;
+    renderList();
 }
 
 function doSplice () {
     numbers.splice(3,1,4.5)
-    var result = '';
-    numbers.forEach((value, index)=>{
-        result = result + `<div class="item item${value}" id='item${value}'>${value}</div>`;
-    });
-    document.getElementById('items').innerHTML = result;
+    renderList();
 }
 
 function doSort() {
     numbers.sort(function(a, b){return b-a})
-    var result = '';
-    numbers.forEach((value, index)=>{
-        result = result + `<div class="item item${value}" id='item${value}'>${value}</div>`;
-    });
-    document.getElementById('items').innerHTML = result;
+    renderList();
 }
